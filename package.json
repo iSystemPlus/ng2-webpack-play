@@ -66,6 +66,8 @@
      "start": "npm run server:dev",
        "start:hmr": "npm run server:dev:hmr",
 
+     "prod": "npm run build:prod && npm run server:prod",
+
      "postinstall": "npm run typings -- install",
 
        "preversion": "npm test",
@@ -86,6 +88,8 @@
 
     "@angularclass/webpack-toolkit": "^1.0.1",
     "@angularclass/request-idle-callback": "^1.0.7",
+
+    "normalize.css": "^4.1.1",
 
     "ie-shim": "^0.1.0",
     "core-js": "^2.4.0",
@@ -141,6 +145,8 @@
     "expose-loader": "^0.7.1",
     "file-loader": "^0.9.0",
     "to-string-loader": "^1.1.4",
+
+    "normalize.css": "^4.1.1",
 
     "html-webpack-plugin": "^2.21.0",
     "copy-webpack-plugin": "^3.0.1",

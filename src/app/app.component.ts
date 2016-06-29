@@ -4,6 +4,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 import { AppState } from './app.service';
+import { Nav } from './nav/nav.component';
 
 /*
  * App Component
@@ -18,25 +19,7 @@ import { AppState } from './app.service';
     require('normalize.css')
   ],
   template: `
-    <nav>
-      <span>
-        <a [routerLink]=" ['./'] ">
-          Index
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./home'] ">
-          Home
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./about'] ">
-          About
-        </a>
-      </span>
-    </nav>
+    <nav></nav>
 
     <main>
       <router-outlet></router-outlet>
@@ -52,7 +35,8 @@ import { AppState } from './app.service';
         </a>
       </div>
     </footer>
-  `
+  `,
+  directives: [Nav]
 })
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';

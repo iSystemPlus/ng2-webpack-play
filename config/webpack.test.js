@@ -9,6 +9,7 @@ const helpers = require('./helpers');
  */
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 /**
  * Webpack Constants
@@ -200,6 +201,13 @@ module.exports = {
       }
     }),
 
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    }),
 
   ],
 

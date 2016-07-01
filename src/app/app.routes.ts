@@ -1,4 +1,4 @@
-import { WebpackAsyncRoute, AsyncRoutes } from '@angularclass/webpack-toolkit';
+import { WebpackAsyncRoute } from '@angularclass/webpack-toolkit';
 import { RouterConfig } from '@angular/router';
 import { Home } from './home';
 import { NoContent } from './no-content';

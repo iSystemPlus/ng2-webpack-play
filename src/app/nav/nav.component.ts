@@ -26,6 +26,12 @@ console.log('`Nav` component loaded asynchronously');
       </span>
       |
       <span>
+        <a [routerLink]=" ['./detail'] ">
+          Detail
+        </a>
+      </span>
+      |
+      <span>
         <a [routerLink]=" ['./about'] ">
           About
         </a>

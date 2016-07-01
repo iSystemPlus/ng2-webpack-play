@@ -1,7 +1,7 @@
 [![taylor swift](https://img.shields.io/badge/secured%20by-taylor%20swift-brightgreen.svg)](https://twitter.com/SwiftOnSecurity)
-[![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen) [![GitHub version](https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter.svg)](https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter) [![Dependency Status](https://david-dm.org/angularclass/angular2-webpack-starter.svg)](https://david-dm.org/angularclass/angular2-webpack-starter)
-[![Issue Stats](http://issuestats.com/github/angularclass/angular2-webpack-starter/badge/pr?style=flat)](http://issuestats.com/github/angularclass/angular2-webpack-starter)
-[![Issue Stats](http://issuestats.com/github/angularclass/angular2-webpack-starter/badge/issue?style=flat)](http://issuestats.com/github/angularclass/angular2-webpack-starter) [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/angularclass/angular-2-webpack-starter)
+[![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen) [![GitHub version](https://badge.fury.io/gh/angularclass%2Fng2-webpack-play.svg)](https://badge.fury.io/gh/angularclass%2Fng2-webpack-play) [![Dependency Status](https://david-dm.org/angularclass/ng2-webpack-play.svg)](https://david-dm.org/angularclass/ng2-webpack-play)
+[![Issue Stats](http://issuestats.com/github/angularclass/ng2-webpack-play/badge/pr?style=flat)](http://issuestats.com/github/angularclass/ng2-webpack-play)
+[![Issue Stats](http://issuestats.com/github/angularclass/ng2-webpack-play/badge/issue?style=flat)](http://issuestats.com/github/angularclass/ng2-webpack-play) [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/angularclass/angular-2-webpack-starter)
 
 <p align="center">
   <a href="https://angularclass.com" target="_blank">
@@ -9,7 +9,7 @@
   </a>
 </p>
 
-# Angular2 Webpack Starter [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://angularclass.com/slack-join) [![Join the chat at https://gitter.im/angularclass/angular2-webpack-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angularclass/angular2-webpack-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Angular2 Webpack Starter [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://angularclass.com/slack-join) [![Join the chat at https://gitter.im/angularclass/ng2-webpack-play](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angularclass/ng2-webpack-play?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 > An Angular 2 starter kit featuring [Angular 2](https://angular.io) ([Router](https://angular.io/docs/js/latest/api/router/), [Forms](https://angular.io/docs/js/latest/api/forms/),
@@ -22,7 +22,7 @@
 > If you're looking to learn TypeScript see [TypeStrong/learn-typescript](https://github.com/TypeStrong/learn-typescript)  
 > If you're looking for Webpack 2 version then see the experimental version [angular2-webpack2-starter](https://github.com/gdi2290/angular2-webpack2-starter) that will be merged  
 > If you're looking for something easier to get started with then see the offical angular2-seed that I also maintain [angular/angular2-seed](https://github.com/angular/angular2-seed)  
-> If you're looking to add Angular 2 Material Design we have a branch [material2](https://github.com/AngularClass/angular2-webpack-starter/tree/material2)
+> If you're looking to add Angular 2 Material Design we have a branch [material2](https://github.com/AngularClass/ng2-webpack-play/tree/material2)
 
 This seed repo serves as an Angular 2 starter for anyone looking to get up and running with Angular 2 and TypeScript fast. Using a [Webpack](http://webpack.github.io/) for building our files and assisting with boilerplate. We're also using Protractor for our end-to-end story and Karma for our unit tests.
 * Best practices in file and application organization for Angular 2.
@@ -43,10 +43,10 @@ This seed repo serves as an Angular 2 starter for anyone looking to get up and r
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/angularclass/angular2-webpack-starter.git
+git clone --depth 1 https://github.com/iSystemPlus/ng2-webpack-play.git
 
 # change directory to our repo
-cd angular2-webpack-starter
+cd ng2-webpack-play
 
 # WINDOWS ONLY
 # add required global libraries `typings webpack-dev-server rimraf webpack`
@@ -88,7 +88,7 @@ go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http
 ## File Structure
 We use the component approach in our starter. This is the new standard for developing Angular apps and a great way to ensure maintainable code by encapsulation of our behavior logic. A component is basically a self contained app usually in a single file or a folder with each concern as a file: style, template, specs, e2e, and component class. Here's how it looks:
 ```
-angular2-webpack-starter/
+ng2-webpack-play/
  ├──config/                    * our configuration
  |   ├──helpers.js             * helper functions for our configuration files
  |   ├──spec-bundle.js         * ignore this magic that sets up our angular 2 testing environment
@@ -284,27 +284,27 @@ see [typings/registry](https://github.com/typings/registry)
 * Why is my service, aka provider, is not injecting parameter correctly?
   * Please use `@Injectable()` for your service for typescript to correctly attach the metadata (this is a TypeScript problem)
 * How do I run protractor with node 0.12.x?
-  * please check out this repo to use the old version of protractor [#146](https://github.com/AngularClass/angular2-webpack-starter/pull/146/files)
+  * please check out this repo to use the old version of protractor [#146](https://github.com/AngularClass/ng2-webpack-play/pull/146/files)
 * Where do I write my tests?
   * You can write your tests next to your component files. See [`/src/app/home/home.spec.ts`](/src/app/home/home.spec.ts)
 * How do I start the app when I get `EACCES` and `EADDRINUSE` errors?
   * The `EADDRINUSE` error means the port `3000` is currently being used and `EACCES` is lack of permission for webpack to build files to `./dist/`
 * How to use `sass` for css?
- * `loaders: ['raw-loader','sass-loader']` and `@Component({ styles: [ require('./filename.scss') ] })` see issue [#136](https://github.com/AngularClass/angular2-webpack-starter/issues/136)
+ * `loaders: ['raw-loader','sass-loader']` and `@Component({ styles: [ require('./filename.scss') ] })` see issue [#136](https://github.com/AngularClass/ng2-webpack-play/issues/136)
 * How do I test a Service?
- * See issue [#130](https://github.com/AngularClass/angular2-webpack-starter/issues/130#issuecomment-158872648)
+ * See issue [#130](https://github.com/AngularClass/ng2-webpack-play/issues/130#issuecomment-158872648)
 * How do I add `vscode-chrome-debug` support?
- * The VS Code chrome debug extension support can be done via `launch.json` see issue [#144](https://github.com/AngularClass/angular2-webpack-starter/issues/144#issuecomment-164063790)
+ * The VS Code chrome debug extension support can be done via `launch.json` see issue [#144](https://github.com/AngularClass/ng2-webpack-play/issues/144#issuecomment-164063790)
 * How do I make the repo work in a virtual machine?
- * You need to use `0.0.0.0` so revert these changes [#205](https://github.com/AngularClass/angular2-webpack-starter/pull/205/files)
+ * You need to use `0.0.0.0` so revert these changes [#205](https://github.com/AngularClass/ng2-webpack-play/pull/205/files)
 * What are the naming conventions for Angular 2?
- * please see issue [#185](https://github.com/AngularClass/angular2-webpack-starter/issues/185) and PR [196](https://github.com/AngularClass/angular2-webpack-starter/pull/196)
+ * please see issue [#185](https://github.com/AngularClass/ng2-webpack-play/issues/185) and PR [196](https://github.com/AngularClass/ng2-webpack-play/pull/196)
 * How do I include bootstrap or jQuery?
- * please see issue [#215](https://github.com/AngularClass/angular2-webpack-starter/issues/215) and [#214](https://github.com/AngularClass/angular2-webpack-starter/issues/214#event-511768416)
+ * please see issue [#215](https://github.com/AngularClass/ng2-webpack-play/issues/215) and [#214](https://github.com/AngularClass/ng2-webpack-play/issues/214#event-511768416)
 * I'm getting an error about not finding my module that I installed?
- * please see [How to include or create custom type definitions](https://github.com/AngularClass/angular2-webpack-starter/wiki/How-to-include-or-create-custom-type-definitions) and [custom-typings.d.ts](https://github.com/AngularClass/angular2-webpack-starter/blob/master/src/custom-typings.d.ts)
+ * please see [How to include or create custom type definitions](https://github.com/AngularClass/ng2-webpack-play/wiki/How-to-include-or-create-custom-type-definitions) and [custom-typings.d.ts](https://github.com/AngularClass/ng2-webpack-play/blob/master/src/custom-typings.d.ts)
 * How do I async load a component?
- * see wiki [How-do-I-async-load-a-component-with-AsyncRoute](https://github.com/AngularClass/angular2-webpack-starter/wiki/How-do-I-async-load-a-component-with-AsyncRoute)
+ * see wiki [How-do-I-async-load-a-component-with-AsyncRoute](https://github.com/AngularClass/ng2-webpack-play/wiki/How-do-I-async-load-a-component-with-AsyncRoute)
 * Error: Cannot find module 'tapable'
  * Remove `node_modules/` and run `npm cache clean` then `npm install`
 * What about Webpack 2?
@@ -318,16 +318,16 @@ see [typings/registry](https://github.com/typings/registry)
 * If you're in China
  * check out https://github.com/cnpm/cnpm
 * If you're looking to add Angular 2 Material Design
- * check out the [material2](https://github.com/AngularClass/angular2-webpack-starter/tree/material2) branch
+ * check out the [material2](https://github.com/AngularClass/ng2-webpack-play/tree/material2) branch
 * node-pre-gyp ERR in npm install (Windows)
- * install Python x86 version between 2.5 and 3.0 on windows see issue [#626](https://github.com/AngularClass/angular2-webpack-starter/issues/626)
+ * install Python x86 version between 2.5 and 3.0 on windows see issue [#626](https://github.com/AngularClass/ng2-webpack-play/issues/626)
 
 # Support, Questions, or Feedback
 > Contact us anytime for anything about this repo or Angular 2
 
 * [Chat: AngularClass.slack](http://angularclass.com/member-join/)
 * [Twitter: @AngularClass](https://twitter.com/AngularClass)
-* [Gitter: AngularClass/angular2-webpack-starter](https://gitter.im/angularclass/angular2-webpack-starter)
+* [Gitter: AngularClass/ng2-webpack-play](https://gitter.im/angularclass/ng2-webpack-play)
 
 # Quick Start Guides
 
@@ -336,12 +336,12 @@ see [typings/registry](https://github.com/typings/registry)
 You can quickly create a free development environment to get started using this
 starter kit in the cloud on [Nitrous](https://www.nitrous.io/):
 
-<a href="https://www.nitrous.io/quickstart?repo=https://github.com/nitrous-io/angular2-webpack-starter">
+<a href="https://www.nitrous.io/quickstart?repo=https://github.com/nitrous-io/ng2-webpack-play">
   <img src="https://nitrous-image-icons.s3.amazonaws.com/quickstart.png" alt="Nitrous Quickstart" width=142 height=34>
 </a>
 
 Simply run `HOST=0.0.0.0 npm start` from the terminal inside of
-`~/code/angular2-webpack-starter` and access your site via the "Preview > 3000"
+`~/code/ng2-webpack-play` and access your site via the "Preview > 3000"
 link in the IDE.
 ___
 

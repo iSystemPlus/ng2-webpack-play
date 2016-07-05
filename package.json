@@ -20,6 +20,8 @@
      "webdriver-manager": "webdriver-manager",
      "protractor": "protractor",
 
+     "typings-install": "npm run typings -- install",
+
      "clean": "npm cache clean && npm run rimraf -- node_modules doc typings coverage dist",
        "clean:dist": "npm run rimraf -- dist",
          "preclean:install": "npm run clean",
@@ -68,7 +70,7 @@
 
      "prod": "npm run build:prod && npm run server:prod",
 
-     "postinstall": "npm run typings -- install",
+     "postinstall": "npm run typings-install",
 
        "preversion": "npm test",
      "version": "npm run build",

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable }     from 'rxjs/Observable';
 
 /*
  * We're loading this component asynchronously
@@ -8,11 +10,34 @@ import { Component } from '@angular/core';
 
 console.log('`Nav` component loaded asynchronously');
 
+export class NavItem {
+  link: String;
+  name: String;
+}
+
 @Component({
   selector: 'nav',
   styles: [`
   `],
   template: `
+    <div>
+      <div *ngFor="let N of navList">
+        &nbsp;
+        <a [routerLink]=" [N.link] ">
+          {{ N.name }}
+        </a>
+        &nbsp;
+        -
+        <span *ngFor="let N2 of N.child">
+        &nbsp;
+        <a [routerLink]=" [N2.link] ">
+          {{ N2.name }}
+        </a>
+        &nbsp;
+        </span>
+      </div>
+    </div>
+    <div>
       <span>
         <a [routerLink]=" ['./'] ">
           Index
@@ -36,15 +61,45 @@ console.log('`Nav` component loaded asynchronously');
           About
         </a>
       </span>
+    </div>
   `
+  //, providers: [ Http ]
 })
-export class Nav {
-  constructor() {
 
+export class Nav {
+
+  navList: NavItem[];
+
+  constructor(private http: Http) {
+    this.navList = [];
+    this.navList.push({link: './', name: 'Index'});
+    this.navList.push({link: './home', name: 'Home'});
+    this.navList.push({link: './detail', name: 'Detail',
+                       child : [
+                                { link: './detail/list', name: 'List' }
+                               ]
+                      });
+    this.navList.push({link: './about', name: 'About'});
+  }
+
+  private handleError (error: any) {
+    // In a real world app, we might use a remote logging infrastructure
+    // We'd also dig deeper into the error to get a better message
+    let errMsg = (error.message) ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    console.error(errMsg); // log to console instead
+    return Observable.throw(errMsg);
+  }
+
+  test() {
+    console.log('start get json file');
+    console.log(this.http.get('assets/nav/nav.json').map(response => this.extractData));
+    console.log('end get json file');
   }
 
   ngOnInit() {
     console.log('hello `Nav` component');
+    console.log(this.navList);
     // static data that is bundled
     // var mockData = require('assets/mock-data/mock-data.json');
     // console.log('mockData', mockData);

@@ -10,9 +10,15 @@ import { Observable }     from 'rxjs/Observable';
 
 console.log('`Nav` component loaded asynchronously');
 
+export class NavItemChild {
+  link: String;
+  name: String;
+}
+
 export class NavItem {
   link: String;
   name: String;
+  child: NavItemChild[];
 }
 
 @Component({
@@ -72,11 +78,11 @@ export class Nav {
 
   constructor(private http: Http) {
     this.navList = [];
-    this.navList.push({link: './', name: 'Index'});
-    this.navList.push({link: './home', name: 'Home'});
+    this.navList.push({link: './', name: 'Index', child : []});
+    this.navList.push({link: './home', name: 'Home', child : []});
     this.navList.push({link: './detail', name: 'Detail',
                        child : [
-                                { link: './detail/list', name: 'List' }
+                                { link: './detail/list', name: 'List'}
                                ]
                       });
     this.navList.push({link: './about', name: 'About'});

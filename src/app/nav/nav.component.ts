@@ -92,9 +92,11 @@ export class Nav {
   }
 
   test() {
+    /*
     console.log('start get json file');
     console.log(this.http.get('assets/nav/nav.json').map(response => this.extractData));
     console.log('end get json file');
+    */
   }
 
   ngOnInit() {

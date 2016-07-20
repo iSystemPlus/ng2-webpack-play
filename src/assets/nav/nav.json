@@ -1,8 +1,11 @@
 [
-  { link: './', name: 'Index' },
-  { link: './home', name: 'Home' },
-  { link: './detail', name: 'Detail',
-    child : [{ link: './detail/list', name: 'List' }]
+  { "link"  : "./",       "name" : "Index" },
+  { "link"  : "./home",   "name" : "Home" },
+  { "link"  : "./detail", "name" : "Detail",
+    "child" : [
+    {
+    "link": "./detail/list", "name" : "List"
+    }]
   },
-  { link: './about', name: 'About' }
+  { "link": "./about", "name": "About" }
 ]

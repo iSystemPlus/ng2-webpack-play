@@ -92,12 +92,14 @@
     "@angularclass/request-idle-callback": "^1.0.7",
 
     "normalize.css": "^4.1.1",
+    "bootstrap-material-design": "^0.5.10",
     "compression-webpack-plugin": "^0.3.1",
 
     "ie-shim": "^0.1.0",
     "core-js": "^2.4.0",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "~0.6.12",
+    "jquery": "^3.1.0",
 
     "http-server": "^0.9.0"
   },
@@ -147,6 +149,8 @@
     "to-string-loader": "^1.1.4",
 
     "normalize.css": "^4.1.1",
+    "bootstrap-material-design": "^0.5.10",
+    "jquery": "^3.1.0",
     "compression-webpack-plugin": "^0.3.1",
 
     "html-webpack-plugin": "^2.21.0",

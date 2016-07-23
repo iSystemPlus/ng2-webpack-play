@@ -11,7 +11,7 @@ export class NavService {
 
   constructor (private http: Http) {}
 
-  getNav (): Promise<Hero[]> {
+  getNav (): Promise<NavItem[]> {
     return this.http.get(this.navUrl)
                     .toPromise()
                     .then(this.extractData)

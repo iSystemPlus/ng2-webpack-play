@@ -5,6 +5,8 @@
 const webpack = require('webpack');
 const helpers = require('./helpers');
 
+const autoprefixer = require('autoprefixer');
+
 /*
  * Webpack Plugins
  */
@@ -13,6 +15,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const HtmlElementsPlugin = require('./html-elements-plugin');
+const ProvidePlugin = require('webpack/lib/ProvidePlugin'); 
 
 /*
  * Webpack Constants
@@ -173,11 +176,28 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw-loader',
         exclude: [helpers.root('src/index.html')]
+      },
+
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'postcss', 'sass']
+      },
+      {
+        test: /\.(woff2?|ttf|eot|svg)$/,
+        loader: 'url?limit=10000'
+      },
+      // Bootstrap 4
+      {
+        test: /bootstrap\/dist\/js\/umd\//,
+        loader: 'imports?jQuery=jquery'
       }
 
     ]
 
   },
+
+  // this is inside module.exports object
+  //postcss: [autoprefixer],
 
   /*
    * Add additional plugins to the compiler.
@@ -268,6 +288,15 @@ module.exports = {
       headTags: require('./head-config.common')
     }),
 
+    // var ProvidePlugin = require('webpack/lib/ProvidePlugin');
+    // require the plugin
+    new ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery',
+        "Tether": 'tether',
+        "window.Tether": "tether"
+    }),
   ],
 
   /*

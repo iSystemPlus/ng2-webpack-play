@@ -10,72 +10,35 @@ import { Nav } from './nav/nav.component';
  * App Component
  * Top Level Component
  */
-var $ = require('jquery');
-window.jQuery = $;
-
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   /* styleUrls: ['./app.style.css'], */
   styles: [
     require('./app.style.css'),
-    require('normalize.css'),
-    require('bootstrap-material-design/dist/css/bootstrap-material-design.css')
+    require('normalize.css')
+    //, require('bootstrap-material-design/dist/css/bootstrap-material-design.css')
   ],
   template: `
     <nav></nav>
 
-    <div class="bs-component">
-      <div class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="javascript:void(0)">Brand<div class="ripple-container"></div></a>
-          </div>
-          <div class="navbar-collapse collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="javascript:void(0)">Active</a></li>
-              <li><a href="javascript:void(0)">Link<div class="ripple-container"></div></a></li>
-              <li class="dropdown">
-                <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown
-                  <b class="caret"></b><div class="ripple-container"></div></a>
-                <ul class="dropdown-menu">
-                  <li><a href="javascript:void(0)">Action</a></li>
-                  <li><a href="javascript:void(0)">Another action</a></li>
-                  <li><a href="javascript:void(0)">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Dropdown header</li>
-                  <li><a href="javascript:void(0)">Separated link</a></li>
-                  <li><a href="javascript:void(0)">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-              <div class="form-group is-empty">
-                <input type="text" class="form-control col-md-8" placeholder="Search">
-              </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="javascript:void(0)">Link</a></li>
-              <li class="dropdown">
-                <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-                  <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="javascript:void(0)">Action</a></li>
-                  <li><a href="javascript:void(0)">Another action</a></li>
-                  <li><a href="javascript:void(0)">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="javascript:void(0)">Separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <button md-button>FLAT</button>
+    <button md-raised-button>RAISED</button>
+    <button md-icon-button>
+       <md-icon class="md-24">favorite</md-icon>
+    </button>
+    <button md-fab>
+       <md-icon class="md-24">add</md-icon>
+    </button>
+    <button md-mini-fab>
+       <md-icon class="md-24">add</md-icon>
+    </button>
+
+    <div class="row">
+      <div class="col-md-3">1</div>
+      <div class="col-md-3">2</div>
+      <div class="col-md-3">3</div>
+      <div class="col-md-3">4</div>
     </div>
 
     <main>

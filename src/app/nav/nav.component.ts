@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable }     from 'rxjs/Observable';
 
 import { NavItem, NavItemChild }     from './nav.item.component';
-import { NavService }     from './nav.service';
+
+/* nav.service.promise.ts Promise */
+import { Http, Response } from '@angular/http';
+import { Observable }     from 'rxjs/Rx';
+import { NavService }     from './nav.service.promise';
+
+/* nav.service.ts Observable */
+//import { NavService }     from './nav.service';
 
 /*
  * We're loading this component asynchronously
@@ -68,7 +73,9 @@ console.log('`Nav` component loaded asynchronously');
 export class Nav {
   errorMessage: string;
   navList: NavItem[];
+
   mode = 'Promise';
+  //mode = 'Observable';
 
   constructor (private navService: NavService) {
 //    this.navList = [];
@@ -87,10 +94,15 @@ export class Nav {
   }
 
   getNav() {
-    this.navService.getNav()
-                   .then(
-                       navList => this.navList = navList,
-                       error =>  this.errorMessage = <any>error);
+    if(this.mode == 'Promise'){
+      this.navService.getNav().then(  navList => this.navList = navList,
+                                      error =>  this.errorMessage = <any>error);
+    }else if(this.mode == 'Observable'){
+      /*
+      this.navService.getNav().subscribe(   navList => this.navList = navList,
+                                            error =>  this.errorMessage = <any>error);
+      */
+    }
   }
 
 }

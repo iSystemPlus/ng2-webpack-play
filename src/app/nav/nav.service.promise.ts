@@ -1,40 +1,37 @@
-// Observable Version
+// Promise Version
 import { Injectable }     from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
-
 import { NavItem, NavItemChild }     from './nav.item.component';
-//import { Observable } from 'rxjs/Observable';
-import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class NavService {
-  constructor (private http: Http) {}
-
   // URL to web api
   private navUrl = 'assets/nav/nav.json';
 
-  getNav (): Observable<NavItem[]> {
+  constructor (private http: Http) {}
+
+  getNav (): Promise<NavItem[]> {
     return this.http.get(this.navUrl)
-                    .map(this.extractData)
+                    .toPromise()
+                    .then(this.extractData)
                     .catch(this.handleError);
   }
-
-/*
-  addHero (name: string): Observable<Hero> {
-    let body = JSON.stringify({ name });
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-
-    return this.http.post(this.heroesUrl, body, options)
-                    .map(this.extractData)
-                    .catch(this.handleError);
-  }
-*/
-
+//
+//  addHero (name: string): Promise<Hero> {
+//    let body = JSON.stringify({ name });
+//    let headers = new Headers({ 'Content-Type': 'application/json' });
+//    let options = new RequestOptions({ headers: headers });
+//
+//    return this.http.post(this.heroesUrl, body, options)
+//               .toPromise()
+//               .then(this.extractData)
+//               .catch(this.handleError);
+//  }
+//
   private extractData(res: Response) {
     let body = res.json();
-    return body.data || { };
+    return body || { };
   }
 
   private handleError (error: any) {
@@ -43,13 +40,10 @@ export class NavService {
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead
-    return Observable.throw(errMsg);
+    return Promise.reject(errMsg);
   }
-}
 
-/*
-  private heroesUrl = 'app/heroes.json'; // URL to JSON file
-*/
+}
 
 
 /*

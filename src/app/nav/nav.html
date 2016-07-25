@@ -1,0 +1,45 @@
+<div id="Nav">
+  <div id="LeftTop">Left Top</div>
+  <div id="LeftSlide">
+    <div *ngFor="let N of navList">
+      &nbsp;
+      <a [routerLink]=" [N.link] ">
+        {{ N.name }}
+      </a>
+      &nbsp;
+      -
+      <span *ngFor="let N2 of N.child">
+      &nbsp;
+      <a [routerLink]=" [N2.link] ">
+        {{ N2.name }}
+      </a>
+      &nbsp;
+      </span>
+    </div>
+  </div>
+    <!-- {{ navList | json }} -->
+    <!-- div>
+      <span>
+        <a [routerLink]=" ['./'] ">
+          Index
+        </a>
+      </span>
+      |
+      <span>
+        <a [routerLink]=" ['./home'] ">
+          Home
+        </a>
+      </span>
+      |
+      <span>
+        <a [routerLink]=" ['./detail'] ">
+          Detail
+        </a>
+      </span>
+      |
+      <span>
+        <a [routerLink]=" ['./about'] ">
+          About
+        </a>
+      </span>
+    </div -->

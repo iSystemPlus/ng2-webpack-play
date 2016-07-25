@@ -20,54 +20,12 @@ console.log('`Nav` component loaded asynchronously');
 
 @Component({
   selector: 'nav',
-  styles: [`
-  `],
-  template: `
-    <div>
-      <div *ngFor="let N of navList">
-        &nbsp;
-        <a [routerLink]=" [N.link] ">
-          {{ N.name }}
-        </a>
-        &nbsp;
-        -
-        <span *ngFor="let N2 of N.child">
-        &nbsp;
-        <a [routerLink]=" [N2.link] ">
-          {{ N2.name }}
-        </a>
-        &nbsp;
-        </span>
-      </div>
-    </div>
-    <!-- {{ navList | json }} -->
-    <div>
-      <span>
-        <a [routerLink]=" ['./'] ">
-          Index
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./home'] ">
-          Home
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./detail'] ">
-          Detail
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./about'] ">
-          About
-        </a>
-      </span>
-    </div>
-  `
-  , providers: [ NavService ]
+  styles: [
+    require('./nav.style.css')
+  ],
+  //template: ``,
+  templateUrl: './nav.html',
+  providers: [ NavService ]
 })
 
 export class Nav {
